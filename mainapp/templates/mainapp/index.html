@@ -1,0 +1,50 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+<div class="col">
+    
+    <div class="row mb-4">
+        <h3 style="margin-right: 20px;">Find Work</h3>
+        <form class="form-inline">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+
+    </div>
+
+    <div class=" row card mb-0 mt-3 shadow-md p-2  rounded bg-steel" style="text-align: center;">
+        <h4 style="color: white;">Feeds</h4>
+    </div>
+        
+    <div class=" row shadow-lg p-3 mb-3 bg-white rounded">
+        <article class="media">
+            <img class="rounded-circle article-img" src="">
+            <div class="media-body">
+            <div class="article-metadata">
+                <a class="mr-2" href="">Username</a>
+                <small class="text-muted">Date & Time</small>
+            </div>
+            <h2><a class="article-title" href="">Title</a></h2>
+            <p class="article-content">Content</p>
+            </div>
+        </article>
+    </div>
+    <div class=" row shadow-lg p-3 mb-3 bg-white rounded">
+        <article class="media">
+            <img class="rounded-circle article-img" src="">
+            <div class="media-body">
+            <div class="article-metadata">
+                <a class="mr-2" href="">Username</a>
+                <small class="text-muted">Date & Time</small>
+            </div>
+            <h2><a class="article-title" href="">Title</a></h2>
+            <p class="article-content">Content</p>
+            </div>
+        </article>
+    </div>
+    <!-- Modal -->
+    
+</div>
+  
+    
+{% endblock content %}

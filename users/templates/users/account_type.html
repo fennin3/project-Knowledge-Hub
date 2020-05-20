@@ -1,0 +1,17 @@
+{% extends 'mainapp/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container">
+    <form class="form-group" method="POST">
+        {% csrf_token %}
+        <legend>Please Choose Account Type</legend>
+        <div class="form-group">
+            {{form|crispy}}
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+
+</div>
+
+{% endblock content %}

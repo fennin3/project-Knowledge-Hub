@@ -1,0 +1,22 @@
+{% extends 'mainapp/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="container">
+        <div class="card shadow-lg" style="text-align: center;">
+            <h4>Profile Info</h4>
+        </div>
+    </div>
+    <div>
+        <div class="card shadow-lg border">
+            <form class="form-group p-3" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+               
+                {{u_form|crispy}}
+                {{p_form|crispy}}
+                <button class="btn btn-primary" type="submit" name="save_profile">Save</button>
+                
+            </form>
+        </div>
+    </div>
+{% endblock content %}

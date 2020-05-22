@@ -1,0 +1,18 @@
+{% extends 'mainapp/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <form method="POST" action="{% url 'post_page' %}">
+        {% csrf_token %}
+        <fieldset class=" p-4 border form-group">
+            <legend class="border-bottom mb-2" style="text-align: center;"><b>Join Today</b></legend>
+    
+            <div class="form-group">
+                {{form|crispy}}
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Post</button>
+            
+        </fieldset>
+    </form>
+{% endblock content %}

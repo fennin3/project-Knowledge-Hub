@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from .models import Profile
+from .models import Profile, Post
 from phonenumber_field.modelfields import PhoneNumberField
 from .choice import Account_Choice
 
@@ -17,22 +17,6 @@ class UserRegisterForm(UserCreationForm):
         model = User
         fields = ['first_name', 'last_name', 'username', 'email', 'password1', 'password2']
 
-# class EditProfileForm(UserChangeForm):
-#     email = forms.EmailField()
-    # profile_pic = forms.ImageField(label='Profile Picture')
-    # website = forms.URLField(null=True)
-    # number = forms.IntegerField()
-    # account_type = forms.ChoiceField(label='Account Type', choices=Account_Choice, initial="", widget=forms.Select(), required=True)
-    # profile_over = forms.CharField(widget=forms.Textarea())
-
-    # class Meta:
-    #     model = User
-    #     fields = (
-    #         'email',
-    #         'first_name',
-    #         'last_name',
-    #         'password'
-    #     )
 
 
 
@@ -45,6 +29,9 @@ class UserUpdateForm(forms.ModelForm):
 
 
 class ProfileUpdateForm(forms.ModelForm):
+    profile_over = forms.CharField(label='Profile Overview', widget=forms.Textarea())
+    profile_pic = forms.ImageField(label='Profile Picture', allow_empty_file=True)
+    number = forms.IntegerField(label='Phone Number')
     class Meta:
         model = Profile
         fields = '__all__'
@@ -54,3 +41,9 @@ class AccountTypeForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['account_type']
+
+
+class PostForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = ['title', 'content']
